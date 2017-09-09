@@ -1,0 +1,7 @@
+<ul>
+	<li *ngFor="let weather of weatherList.forecast.forecastday">
+		{{weather.date}}
+		 <button type="button" (click)="saveData(weather)" class="btn btn-primary">Add To Favourite</button>
+	</li>
+
+</ul>

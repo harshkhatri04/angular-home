@@ -1,0 +1,6 @@
+<a [routerLink]="'/fav-movies'"> Favourite Movies</a>
+<!-- 
+<app-weather-favlist></app-weather-favlist> -->
+<app-weather-search (weatherList)="updateWeatherList($event)"></app-weather-search>
+<app-weather-list [weatherList]="weatherList"></app-weather-list>
+
