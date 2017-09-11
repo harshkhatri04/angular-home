@@ -19,7 +19,11 @@ const apiRoutes: Routes = [
 {
   path: 'fav-movies',
   component: WeatherFavlistComponent
-}
+},
+ { path: '',
+    redirectTo: '/search',
+    pathMatch: 'full'
+  }
 ]
 @NgModule({
   declarations: [

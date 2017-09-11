@@ -1,7 +1,53 @@
-<ul>
-	<li *ngFor="let weather of weatherList.forecast.forecastday">
-		{{weather.date}}
-		 <button type="button" (click)="saveData(weather)" class="btn btn-primary">Add To Favourite</button>
-	</li>
+<body>
 
-</ul>
+<div class="row box-shadow" >
+  <!-- <div class="col-md-6">
+            <img class="lib-img-show" src="../assets/weather.png" alt="weather image">
+          </div> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let weather of weatherList.forecast.forecastday">
+        <div class="weather-card one">
+          <div class="top">
+            <div class="wrapper">
+              <div class="mynav">
+                <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
+                <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
+              </div>
+              <h1 class="heading">{{weather.day.condition.text}}</h1><img src="{{weather.day.condition.icon}}">
+              <h3 class="location">{{weatherList.location.name}}</h3>
+              <p class="temp">
+                <span class="temp-value">{{weather.day.avgtemp_c}}</span>
+                <span class="deg">0</span>
+                <a href="javascript:;"><span class="temp-type">C</span></a>
+              </p>
+            </div>
+            <h1><span class="date">{{weather.date}}</span></h1>
+          </div>
+          <div class="bottom">
+            <div class="wrapper">
+              <ul class="forecast">
+                <a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>
+                <li class="active">
+                  <span class="text">Maximum Temperature</span>
+                  <span class="lnr lnr-sun condition">
+                  <span class="temp">{{weather.day.maxtemp_c}}<span class="deg">0</span><span class="temp-type">C</span></span>
+                  </span>
+                </li>
+                <li>
+                  <span class="text">Minimum Temperature</span>
+                  <span class="lnr lnr-cloud condition">
+                  <span class="temp">{{weather.day.mintemp_c}}<span class="deg">0</span><span class="temp-type">C</span></span>
+                  </span>
+                </li>
+              </ul>
+              <button class="favButton" type="button" (click)="saveData(weather)" class="btn btn-primary">Add To Favourite</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+</body>
