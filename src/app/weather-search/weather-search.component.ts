@@ -15,6 +15,11 @@ export class WeatherSearchComponent implements OnInit {
   constructor(private WeatherService : WeatherService) { }
 
   ngOnInit() {
+  this.WeatherService.getOnlineWeather('delhi').subscribe((res) => {
+      this.weathers = res;
+      this.weatherList.emit(this.weathers);
+      console.log(this.weathers)
+    });
   }
 
 searchweather(weather:any){
